@@ -9,7 +9,7 @@
 <body>
 
   <nav class="navbar">
-    <div class="nav-logo">Último Pixel</div>
+    <div class="nav-logo">Último<span class="logo-accent">Pixel</span></div>
     <ul class="nav-links">
       <li><a href="index.html">Jogar</a></li>
       <li><a href="sobre.html" class="active">Sobre</a></li>
@@ -19,20 +19,88 @@
   </nav>
 
   <main class="page-content">
+
+    <!-- Sobre o Jogo -->
     <section class="section">
+      <p class="section-label">01 — O jogo</p>
       <h1>Sobre o Jogo</h1>
-      <!-- Descrição do jogo aqui -->
+      <div class="section-divider"></div>
+      <p>
+        Último Pixel é um arcade de esquiva onde você controla um computador que encolhe a cada
+        golpe. Vida e tamanho são a mesma coisa: quanto mais dano você toma, menor e mais
+        moderno o personagem fica — até virar um pendrive esquecido no fundo da gaveta.
+      </p>
     </section>
 
+    <!-- Estágios -->
     <section class="section">
+      <p class="section-label">02 — Progressão</p>
+      <h2>Os 5 Estágios do Personagem</h2>
+      <p>Cada hit te leva uma era tecnológica à frente — e um pixel a menos.</p>
+      <ul class="stages-list">
+        <li class="stage-item">
+          <span class="stage-num">01</span>
+          <span class="stage-name">Mainframe</span>
+          <span class="stage-year">anos 1970</span>
+        </li>
+        <li class="stage-item">
+          <span class="stage-num">02</span>
+          <span class="stage-name">Macintosh</span>
+          <span class="stage-year">1984</span>
+        </li>
+        <li class="stage-item">
+          <span class="stage-num">03</span>
+          <span class="stage-name">iMac G3</span>
+          <span class="stage-year">1998</span>
+        </li>
+        <li class="stage-item">
+          <span class="stage-num">04</span>
+          <span class="stage-name">Notebook Fino</span>
+          <span class="stage-year">anos 2000</span>
+        </li>
+        <li class="stage-item">
+          <span class="stage-num">05</span>
+          <span class="stage-name">CPU</span>
+          <span class="stage-year">game over</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Como Jogar -->
+    <section class="section">
+      <p class="section-label">03 — Controles</p>
       <h2>Como Jogar</h2>
-      <!-- Instruções aqui -->
+      <p>Movimento em quatro direções. Sem botão de ataque — só esquiva.</p>
+      <div class="control-grid">
+        <div class="control-chip">
+          <span class="c-key">↑ ↓ ← →</span>
+          <span class="c-desc">Mover o personagem</span>
+        </div>
+        <div class="control-chip">
+          <span class="c-key">WASD</span>
+          <span class="c-desc">Alternativa ao direcional</span>
+        </div>
+        <div class="control-chip">
+          <span class="c-key">ESC</span>
+          <span class="c-desc">Pausar o jogo</span>
+        </div>
+        <div class="control-chip">
+          <span class="c-key">F</span>
+          <span class="c-desc">Modo tela cheia</span>
+        </div>
+      </div>
     </section>
 
+    <!-- Dev -->
     <section class="section">
-      <h2>Sobre o Desenvolvedor</h2>
-      <!-- Bio aqui -->
+      <p class="section-label">04 — Dev</p>
+      <h2>Sobre a Desenvolvedora</h2>
+      <p>
+        <!-- Bio aqui -->
+        Em breve.
+      </p>
     </section>
+
   </main>
 
   <script src="script.js"></script>

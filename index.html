@@ -9,7 +9,7 @@
 <body>
 
   <nav class="navbar">
-    <div class="nav-logo">Último Pixel</div>
+    <div class="nav-logo">Último<span class="logo-accent">Pixel</span></div>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Jogar</a></li>
       <li><a href="sobre.html">Sobre</a></li>
@@ -19,14 +19,40 @@
   </nav>
 
   <main class="page-jogar">
-    <div class="game-wrapper">
-      <!-- Cole aqui a URL do export do Construct 3 -->
-      <iframe
-        id="game-frame"
-        src=""
-        allowfullscreen
-        title="Último Pixel - Jogo"
-      ></iframe>
+    <div class="game-bezel">
+
+      <div class="bezel-top">
+        <span class="bezel-title">Último Pixel</span>
+        <span class="bezel-badge">ARCADE · 2026</span>
+      </div>
+
+      <div class="screen-area">
+        <div class="screen-inner" id="screen-inner">
+
+          <!-- Placeholder enquanto o jogo não está integrado -->
+          <div class="screen-placeholder" id="screen-placeholder">
+            <p class="blink">Insert Coin</p>
+            <p class="sub">aguardando integração com Construct 3</p>
+          </div>
+
+          <!-- iframe do Construct 3 — ficará visível quando GAME_URL for preenchida -->
+          <iframe
+            id="game-frame"
+            src=""
+            allowfullscreen
+            title="Último Pixel - Jogo"
+            style="display:none;"
+          ></iframe>
+
+        </div>
+      </div>
+
+      <div class="bezel-bottom">
+        <span class="hint"><kbd>↑ ↓ ← →</kbd> mover</span>
+        <span class="hint"><kbd>ESC</kbd> pausar</span>
+        <span class="hint"><kbd>F</kbd> fullscreen</span>
+      </div>
+
     </div>
   </main>
 
