@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Último Pixel — Jogar</title>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -16,44 +17,105 @@
       <li><a href="galeria.html">Galeria</a></li>
       <li><a href="contato.html">Contato</a></li>
     </ul>
+    <!-- Critério 6: botão de tema no topo da página -->
+    <button id="theme-toggle-btn" class="theme-btn" title="Alternar Tema">
+      <i class="ph ph-moon"></i>
+    </button>
   </nav>
 
   <main class="page-jogar">
-    <div class="game-bezel">
 
-      <div class="bezel-top">
-        <span class="bezel-title">Último Pixel</span>
-        <span class="bezel-badge">ARCADE · 2026</span>
-      </div>
+    <div class="device-shell">
 
-      <div class="screen-area">
-        <div class="screen-inner" id="screen-inner">
+      <!-- ── MONITOR CRT (desktop) ───────────────────────────────────── -->
+      <div class="crt-body mac-el" style="flex-direction:column;">
 
-          <!-- Placeholder enquanto o jogo não está integrado -->
-          <div class="screen-placeholder" id="screen-placeholder">
-            <p class="blink">Insert Coin</p>
-            <p class="sub">aguardando integração com Construct 3</p>
+        <div class="crt-header">
+          <div class="crt-dots">
+            <span class="crt-dot"></span>
+            <span class="crt-dot"></span>
+            <span class="crt-dot"></span>
           </div>
+          <!-- Critério 1: dados injetados via JS -->
+          <span class="crt-title">
+            <span data-game-name></span> · <span data-game-version></span>
+          </span>
+          <div class="crt-spacer"></div>
+        </div>
 
-          <!-- iframe do Construct 3 — ficará visível quando GAME_URL for preenchida -->
-          <iframe
-            id="game-frame"
-            src=""
-            allowfullscreen
-            title="Último Pixel - Jogo"
-            style="display:none;"
-          ></iframe>
+        <div class="crt-bezel">
+          <div class="screen-area">
+            <div class="screen-inner" id="screen-inner">
+              <div class="screen-placeholder js-screen-placeholder">
+                <p class="blink">Insert Coin</p>
+                <p class="sub">aguardando Construct 3</p>
+              </div>
+              <iframe
+                class="game-frame js-game-frame"
+                src=""
+                allow="autoplay; fullscreen; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; magnetometer; focus-without-user-activation"
+                allowfullscreen="true"
+                title="Último Pixel - Jogo"
+                style="display:none;"
+              ></iframe>
+            </div>
+          </div>
+        </div>
 
+        <div class="crt-footer">
+          <span class="crt-brand" data-game-name></span>
+          <div class="crt-controls">
+            <div class="crt-knob"></div>
+            <div class="crt-knob"></div>
+            <div class="crt-power-dot"></div>
+          </div>
         </div>
       </div>
 
-      <div class="bezel-bottom">
-        <span class="hint"><kbd>↑ ↓ ← →</kbd> mover</span>
-        <span class="hint"><kbd>ESC</kbd> pausar</span>
-        <span class="hint"><kbd>F</kbd> fullscreen</span>
+      <!-- Base/pescoço do monitor (desktop) -->
+      <div class="crt-stand mac-el" style="display:flex;">
+        <div class="crt-neck"></div>
+        <div class="crt-base"></div>
       </div>
 
+
+
+    </div><!-- /.device-shell -->
+
+    <!-- Dicas de teclado -->
+    <div class="mac-kbd-row mac-el" style="align-items: center;">
+      <span class="hint"><kbd>↑ ↓ ← →</kbd> Mover</span>
+      <span class="hint"><kbd>Space</kbd> Dash</span>
+      <button id="fullscreen-btn" style="background: var(--charcoal-light); color: var(--cream); font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid #555; border-radius: 4px; padding: 6px 10px; cursor: pointer; margin-left: auto; display: flex; align-items: center; gap: 6px; transition: background 0.15s;">
+        <i class="ph ph-corners-out"></i> Tela Cheia
+      </button>
     </div>
+
+    <!-- Critério 5: Input de saudação personalizada -->
+    <div class="greeting-block">
+      <div class="greeting-inner">
+        <label class="greeting-label" for="greeting-input">
+          Como devo te chamar, jogador?
+        </label>
+        <div class="greeting-row">
+          <input
+            id="greeting-input"
+            class="greeting-input"
+            type="text"
+            placeholder="Seu nome aqui..."
+            maxlength="30"
+          />
+          <button id="greeting-btn" class="greeting-btn">Entrar →</button>
+        </div>
+        <p id="greeting-display" class="greeting-display"></p>
+      </div>
+    </div>
+
+    <!-- Status de acesso — atualizado pelo JS após o prompt de idade -->
+    <div class="access-bar">
+      <span id="access-status" class="access-status"></span>
+    </div>
+
   </main>
 
   <script src="script.js"></script>

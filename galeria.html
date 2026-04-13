@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Último Pixel — Galeria</title>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -16,67 +17,228 @@
       <li><a href="galeria.html" class="active">Galeria</a></li>
       <li><a href="contato.html">Contato</a></li>
     </ul>
+    <!-- Critério 6: botão de tema -->
+    <button id="theme-toggle-btn" class="theme-btn" title="Alternar Tema">
+      <i class="ph ph-moon"></i>
+    </button>
   </nav>
 
   <main class="page-content">
 
+    <!-- ─── Screenshots ──────────────────────────────────────────────────── -->
     <section class="section">
-      <p class="section-label">Capturas</p>
+      <p class="section-label">01 — Capturas</p>
       <h1>Galeria</h1>
       <div class="section-divider"></div>
+      <p>Screenshots do jogo em ação — da tela de abertura ao game over.</p>
 
-      <div class="gallery-grid">
-
-        <!-- Substituir os .gallery-ph por <img> quando tiver as screenshots -->
-
+      <div class="gallery-grid" style="margin-top:1.5rem;">
         <div class="gallery-item">
-          <div class="gallery-ph">
-            <span>🖥</span>
-            <p>screenshot</p>
+          <img src="imagens/TelaInicio.png" alt="Tela de início — PLAY" style="width:100%;aspect-ratio:854/480;object-fit:cover;" />
+          <p class="gallery-caption">Tela de início — PLAY</p>
+        </div>
+        <div class="gallery-item">
+          <img src="imagens/TelaJogo.png" alt="Gameplay — Notbook em campo" style="width:100%;aspect-ratio:854/480;object-fit:cover;" />
+          <p class="gallery-caption">Gameplay — Notbook em campo</p>
+        </div>
+        <div class="gallery-item">
+          <img src="imagens/TelaGameOver.png" alt="Game Over" style="width:100%;aspect-ratio:854/480;object-fit:cover;" />
+          <p class="gallery-caption">Game Over — "Tarefa falhou com sucesso."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Personagens: Sprite vs Real ──────────────────────────────────── -->
+    <section class="section">
+      <p class="section-label">02 — Personagens</p>
+      <h2>Sprite vs. Real</h2>
+      <p>Cada estágio do personagem é inspirado em hardware real. Veja a referência por trás dos pixels.</p>
+
+      <div class="compare-grid">
+
+        <div class="compare-card">
+          <div class="compare-header">
+            <span class="compare-stage-badge">Estágio 01</span>
+            <span class="compare-era">Anos 1970</span>
           </div>
-          <p class="gallery-caption">Estágio 01 — Mainframe</p>
+          <div class="compare-panels">
+            <div class="compare-panel">
+              <span class="compare-label">Sprite</span>
+              <div class="sprite-box"><img src="imagens/MainframeJogo.png" style="max-width:80%;max-height:80%;position:relative;z-index:1;" /></div>
+              <span class="compare-name">In-game</span>
+            </div>
+            <div class="compare-panel">
+              <span class="compare-label">Referência real</span>
+              <div class="real-img-box"><img src="imagens/MainframeReal.jfif" style="width:100%;height:100%;object-fit:cover;" /></div>
+              <span class="compare-name">IBM System/370</span>
+            </div>
+          </div>
+          <div class="compare-footer">
+            <span class="compare-vs-badge">1970s</span>
+            <span class="compare-desc">Mainframes ocupavam salas inteiras. Seu sprite é enorme — e lento.</span>
+          </div>
         </div>
 
-        <div class="gallery-item">
-          <div class="gallery-ph">
-            <span>💻</span>
-            <p>screenshot</p>
+        <div class="compare-card">
+          <div class="compare-header">
+            <span class="compare-stage-badge">Estágio 02</span>
+            <span class="compare-era">1984</span>
           </div>
-          <p class="gallery-caption">Estágio 02 — Macintosh 1984</p>
+          <div class="compare-panels">
+            <div class="compare-panel">
+              <span class="compare-label">Sprite</span>
+              <div class="sprite-box"><img src="imagens/MacintoshJogo.png" style="max-width:80%;max-height:80%;position:relative;z-index:1;" /></div>
+              <span class="compare-name">In-game</span>
+            </div>
+            <div class="compare-panel">
+              <span class="compare-label">Referência real</span>
+              <div class="real-img-box"><img src="imagens/MacintoshReal.png" style="width:100%;height:100%;object-fit:cover;" /></div>
+              <span class="compare-name">Apple Macintosh 128K</span>
+            </div>
+          </div>
+          <div class="compare-footer">
+            <span class="compare-vs-badge">1984</span>
+            <span class="compare-desc">O Mac original revolucionou a GUI. Aqui, ele é sua segunda chance.</span>
+          </div>
         </div>
 
-        <div class="gallery-item">
-          <div class="gallery-ph">
-            <span>🟢</span>
-            <p>screenshot</p>
+        <div class="compare-card">
+          <div class="compare-header">
+            <span class="compare-stage-badge">Estágio 03</span>
+            <span class="compare-era">Anos 2000</span>
           </div>
-          <p class="gallery-caption">Estágio 03 — iMac G3</p>
+          <div class="compare-panels">
+            <div class="compare-panel">
+              <span class="compare-label">Sprite</span>
+              <div class="sprite-box"><img src="imagens/NotnookJogo.png" style="max-width:80%;max-height:80%;position:relative;z-index:1;" /></div>
+              <span class="compare-name">In-game</span>
+            </div>
+            <div class="compare-panel">
+              <span class="compare-label">Referência real</span>
+              <div class="real-img-box"><img src="imagens/notbookReal.png" style="width:100%;height:100%;object-fit:cover;" /></div>
+              <span class="compare-name">Notebook</span>
+            </div>
+          </div>
+          <div class="compare-footer">
+            <span class="compare-vs-badge">2000s</span>
+            <span class="compare-desc">Menor, mais rápido, mais ágil.</span>
+          </div>
         </div>
 
-        <div class="gallery-item">
-          <div class="gallery-ph">
-            <span>🦠</span>
-            <p>screenshot</p>
+        <div class="compare-card">
+          <div class="compare-header">
+            <span class="compare-stage-badge">Estágio 04</span>
+            <span class="compare-era">Última vida</span>
           </div>
-          <p class="gallery-caption">Vírus e bugs — inimigos do jogo</p>
+          <div class="compare-panels">
+            <div class="compare-panel">
+              <span class="compare-label">Sprite</span>
+              <div class="sprite-box"><img src="imagens/CpuJogo.png" style="max-width:80%;max-height:80%;position:relative;z-index:1;" /></div>
+              <span class="compare-name">In-game</span>
+            </div>
+            <div class="compare-panel">
+              <span class="compare-label">Referência real</span>
+              <div class="real-img-box"><img src="imagens/CpuReal.png" style="width:100%;height:100%;object-fit:cover;" /></div>
+              <span class="compare-name">Cpu</span>
+            </div>
+          </div>
+          <div class="compare-footer">
+            <span class="compare-vs-badge">hoje</span>
+            <span class="compare-desc">Só uma Cpu. Pequena, ultrarrápida. Próximo hit = fim.</span>
+          </div>
         </div>
 
-        <div class="gallery-item">
-          <div class="gallery-ph">
-            <span>💾</span>
-            <p>screenshot</p>
+      </div>
+    </section>
+
+    <!-- ─── Inimigos: Sprite vs Real ─────────────────────────────────────── -->
+    <section class="section">
+      <p class="section-label">03 — Inimigos</p>
+      <h2>Inimigos do Jogo</h2>
+      <p>Vírus, bugs e arquivos corrompidos — ameaças digitais transformadas em pixel art.</p>
+
+      <div class="enemy-compare-grid">
+
+        <div class="enemy-compare-card">
+          <div class="enemy-compare-header">
+            <span class="enemy-type-badge badge-file">Arquivo Corrompido</span>
+            <span style="font-family:var(--font-mono);font-size:0.45rem;color:var(--gray);">spawn 2s</span>
           </div>
-          <p class="gallery-caption">Estágio 05 — Pendrive · Game Over</p>
+          <div class="enemy-compare-panels">
+            <div class="enemy-compare-panel">
+              <span class="compare-label">Sprite</span>
+              <div class="sprite-box" style="width:72px;height:72px;"><img src="imagens/ArqvcrJogo.png" style="max-width:80%;max-height:80%;position:relative;z-index:1;" /></div>
+              <span class="compare-name">In-game</span>
+            </div>
+            <div class="enemy-compare-panel">
+              <span class="compare-label">Inspiração</span>
+              <div class="real-img-box" style="width:72px;height:72px;font-size:2rem;">⚠️</div>
+              <span class="compare-name">Ícone de erro</span>
+            </div>
+          </div>
+          <div class="enemy-compare-footer">
+            <strong>Arquivo Corrompido</strong>
+            <span>Anda em linha reta até sair da tela. Previsível, mas insistente — a cada 2 segundos.</span>
+          </div>
         </div>
 
-        <div class="gallery-item">
-          <div class="gallery-ph">
-            <span>🎮</span>
-            <p>screenshot</p>
+        <div class="enemy-compare-card">
+          <div class="enemy-compare-header">
+            <span class="enemy-type-badge badge-bug">Bug</span>
+            <span style="font-family:var(--font-mono);font-size:0.45rem;color:var(--gray);">spawn 8s</span>
           </div>
-          <p class="gallery-caption">Gameplay — esquiva em quatro direções</p>
+          <div class="enemy-compare-panels">
+            <div class="enemy-compare-panel">
+              <span class="compare-label">Sprite</span>
+              <div class="sprite-box" style="width:72px;height:72px;"><img src="imagens/BugJogo.png" style="max-width:80%;max-height:80%;position:relative;z-index:1;" /></div>
+              <span class="compare-name">In-game</span>
+            </div>
+            <div class="enemy-compare-panel">
+              <span class="compare-label">Inspiração</span>
+              <div class="real-img-box" style="width:72px;height:72px;font-size:2rem;">🔴</div>
+              <span class="compare-name">Erro de software</span>
+            </div>
+          </div>
+          <div class="enemy-compare-footer">
+            <strong>Bug</strong>
+            <span>Ricocheteia nas paredes sem parar. Uma vez na tela, não vai embora.</span>
+          </div>
         </div>
 
+        <div class="enemy-compare-card">
+          <div class="enemy-compare-header">
+            <span class="enemy-type-badge badge-virus">Vírus</span>
+            <span style="font-family:var(--font-mono);font-size:0.45rem;color:var(--gray);">após 30s</span>
+          </div>
+          <div class="enemy-compare-panels">
+            <div class="enemy-compare-panel">
+              <span class="compare-label">Sprite</span>
+              <div class="sprite-box" style="width:72px;height:72px;"><img src="imagens/VirusJogo.png" style="max-width:80%;max-height:80%;position:relative;z-index:1;" /></div>
+              <span class="compare-name">In-game</span>
+            </div>
+            <div class="enemy-compare-panel">
+              <span class="compare-label">Inspiração</span>
+              <div class="real-img-box" style="width:72px;height:72px;font-size:2rem;">💉</div>
+              <span class="compare-name">Malware / trojan</span>
+            </div>
+          </div>
+          <div class="enemy-compare-footer">
+            <strong>Vírus</strong>
+            <span>Persegue o jogador. Aparece após 30 segundos — quando você já relaxou.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── Nota técnica ────────────────────────────────────────────────── -->
+    <section class="section" style="margin-bottom:0;">
+      <div style="background:var(--cream-dark);border:1px solid var(--cream-darker);border-left:3px solid var(--green-lcd);border-radius:0 6px 6px 0;padding:1rem 1.25rem;max-width:560px;">
+        <p style="font-family:var(--font-mono);font-size:0.65rem;color:var(--gray);letter-spacing:0.08em;line-height:1.7;">
+          Cada personagem foi criado com muito carinho para evocar a era tecnológica que representa.
+          <!-- Critério 1: dado injetado -->
+          Desenvolvido por: <strong data-game-developer></strong> · <span data-game-platform></span>
+        </p>
       </div>
     </section>
 

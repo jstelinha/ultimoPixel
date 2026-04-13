@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Último Pixel — Contato</title>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -16,6 +17,11 @@
       <li><a href="galeria.html">Galeria</a></li>
       <li><a href="contato.html" class="active">Contato</a></li>
     </ul>
+    
+    <!-- Critério 6: botão de tema -->
+    <button id="theme-toggle-btn" class="theme-btn" title="Alternar Tema">
+      <i class="ph ph-moon"></i>
+    </button>
   </nav>
 
   <main class="page-content">
@@ -24,7 +30,77 @@
       <p class="section-label">Fale comigo</p>
       <h1>Contato</h1>
       <div class="section-divider"></div>
-      <p>Feedback, bug report ou só curiosidade sobre o projeto — pode mandar.</p>
+      <!-- Critério 1: dado injetado via JS -->
+      <p>
+        Feedback, bug report ou só curiosidade sobre
+        <strong data-game-name></strong> — pode mandar.
+        Criado por <span data-game-developer></span>. Respondo por email.
+      </p>
+    </section>
+
+    <section class="section">
+      <!--
+        FORMSPREE — COMO CONFIGURAR:
+        1. Acesse formspree.io e crie uma conta grátis
+        2. Crie um novo Form e copie o ID (ex: xyzabc12)
+        3. Substitua YOUR_FORM_ID abaixo pelo seu ID
+      -->
+      <form
+        class="contact-form"
+        id="contact-form"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+      >
+        <div class="form-field">
+          <label class="form-label" for="name">Nome</label>
+          <input
+            class="form-input"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Como devo te chamar?"
+            required
+            autocomplete="name"
+          />
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="email">Email</label>
+          <input
+            class="form-input"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="seu@email.com"
+            required
+            autocomplete="email"
+          />
+        </div>
+
+        <div class="form-field form-field--area">
+          <label class="form-label" for="message">Mensagem</label>
+          <textarea
+            class="form-input form-textarea"
+            id="message"
+            name="message"
+            placeholder="Bug encontrado? Sugestão? Só quer dizer oi?"
+            rows="5"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-submit-row">
+          <button class="form-submit" type="submit" id="form-submit-btn">
+            Enviar mensagem →
+          </button>
+        </div>
+      </form>
+
+      <div class="form-success-msg" id="form-success" style="display:none;">
+        <span class="form-success-icon">✓</span>
+        <p>Mensagem enviada com sucesso.</p>
+        <p class="form-success-sub">Retorno em breve.</p>
+      </div>
     </section>
 
   </main>

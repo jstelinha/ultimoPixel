@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Último Pixel — Sobre</title>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -16,26 +17,59 @@
       <li><a href="galeria.html">Galeria</a></li>
       <li><a href="contato.html">Contato</a></li>
     </ul>
+    <!-- Critério 6: botão de tema -->
+    <button id="theme-toggle-btn" class="theme-btn" title="Alternar Tema">
+      <i class="ph ph-moon"></i>
+    </button>
   </nav>
 
   <main class="page-content">
 
-    <!-- Sobre o Jogo -->
+    <!-- ─── 01 — O Jogo ──────────────────────────────────────────── -->
     <section class="section">
       <p class="section-label">01 — O jogo</p>
       <h1>Sobre o Jogo</h1>
       <div class="section-divider"></div>
+
+      <!-- Critério 1: painel de dados estáticos injetados via JS -->
+      <div class="static-data-panel">
+        <div class="sdp-row">
+          <span class="sdp-key">Nome</span>
+          <span class="sdp-val" data-game-name></span>
+        </div>
+        <div class="sdp-row">
+          <span class="sdp-key">Versão</span>
+          <span class="sdp-val" data-game-version></span>
+        </div>
+        <div class="sdp-row">
+          <span class="sdp-key">Desenvolvedora</span>
+          <span class="sdp-val" data-game-developer></span>
+        </div>
+        <div class="sdp-row">
+          <span class="sdp-key">Plataforma</span>
+          <span class="sdp-val" data-game-platform></span>
+        </div>
+        <div class="sdp-row">
+          <span class="sdp-key">Gênero</span>
+          <span class="sdp-val" data-game-genre></span>
+        </div>
+        <div class="sdp-row">
+          <span class="sdp-key">Vidas</span>
+          <span class="sdp-val" data-game-lives></span>
+        </div>
+      </div>
+
+      <p style="margin-top:1.5rem;" data-game-description></p>
       <p>
-        Último Pixel é um arcade de esquiva onde você controla um computador que encolhe a cada
-        golpe. Vida e tamanho são a mesma coisa: quanto mais dano você toma, menor e mais
-        moderno o personagem fica — até virar um pendrive esquecido no fundo da gaveta.
+        Sem mapa, sem fase, sem condição de vitória. Só você, vírus, bugs e o tempo.
+        O score é o único troféu. Quanto mais você aguenta, maior sua lenda.
       </p>
     </section>
 
-    <!-- Estágios -->
+    <!-- ─── 02 — Estágios ─────────────────────────────────────────── -->
     <section class="section">
       <p class="section-label">02 — Progressão</p>
-      <h2>Os 5 Estágios do Personagem</h2>
+      <h2>Os Estágios do Personagem</h2>
       <p>Cada hit te leva uma era tecnológica à frente — e um pixel a menos.</p>
       <ul class="stages-list">
         <li class="stage-item">
@@ -50,25 +84,62 @@
         </li>
         <li class="stage-item">
           <span class="stage-num">03</span>
-          <span class="stage-name">iMac G3</span>
-          <span class="stage-year">1998</span>
-        </li>
-        <li class="stage-item">
-          <span class="stage-num">04</span>
           <span class="stage-name">Notebook Fino</span>
           <span class="stage-year">anos 2000</span>
         </li>
         <li class="stage-item">
-          <span class="stage-num">05</span>
+          <span class="stage-num">04</span>
           <span class="stage-name">CPU</span>
-          <span class="stage-year">game over</span>
+          <span class="stage-year">última vida</span>
+        </li>
+        <li class="stage-item stage-item--gameover">
+          <span class="stage-num" style="color:var(--red);">XX</span>
+          <span class="stage-name" style="color:var(--gray); font-weight:400;">—</span>
+          <span class="stage-year stage-year--over">game over</span>
         </li>
       </ul>
     </section>
 
-    <!-- Como Jogar -->
+    <!-- ─── 03 — Inimigos ─────────────────────────────────────────── -->
     <section class="section">
-      <p class="section-label">03 — Controles</p>
+      <p class="section-label">03 — Ameaças</p>
+      <h2>Os Inimigos</h2>
+      <p>Três tipos de ameaça, cada uma com comportamento distinto. Memorize ou morra.</p>
+
+      <div class="enemies-grid">
+        <div class="enemy-card">
+          <img class="enemy-icon" src="imagens/ArqvcrJogo.png" style="height:2.5rem;width:auto;object-fit:contain;image-rendering:pixelated;" alt="Arquivo" />
+          <div class="enemy-name">Arquivo Corrompido</div>
+          <span class="enemy-tag enemy-tag--file">spawn: 2s</span>
+          <div class="enemy-desc">
+            Atravessa a tela em linha reta — horizontal ou vertical.
+            Previsível, mas frequente demais para ignorar.
+          </div>
+        </div>
+        <div class="enemy-card">
+          <img class="enemy-icon" src="imagens/BugJogo.png" style="height:2.5rem;width:auto;object-fit:contain;image-rendering:pixelated;" alt="Bug" />
+          <div class="enemy-name">Bug</div>
+          <span class="enemy-tag enemy-tag--bug">spawn: 8s</span>
+          <div class="enemy-desc">
+            Ricocheteia nas paredes sem parar.
+            Uma vez na tela, não vai embora.
+          </div>
+        </div>
+        <div class="enemy-card">
+          <img class="enemy-icon" src="imagens/VirusJogo.png" style="height:2.5rem;width:auto;object-fit:contain;image-rendering:pixelated;" alt="Vírus" />
+          <div class="enemy-name">Vírus</div>
+          <span class="enemy-tag enemy-tag--virus">após 30s</span>
+          <div class="enemy-desc">
+            Persegue você ativamente. Só aparece depois dos 30 segundos
+            — não fique parado.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── 04 — Controles ─────────────────────────────────────────── -->
+    <section class="section">
+      <p class="section-label">04 — Controles</p>
       <h2>Como Jogar</h2>
       <p>Movimento em quatro direções. Sem botão de ataque — só esquiva.</p>
       <div class="control-grid">
@@ -77,28 +148,104 @@
           <span class="c-desc">Mover o personagem</span>
         </div>
         <div class="control-chip">
-          <span class="c-key">WASD</span>
-          <span class="c-desc">Alternativa ao direcional</span>
+          <span class="c-key">Space</span>
+          <span class="c-desc">Dash — esquiva rápida</span>
         </div>
         <div class="control-chip">
-          <span class="c-key">ESC</span>
-          <span class="c-desc">Pausar o jogo</span>
-        </div>
-        <div class="control-chip">
-          <span class="c-key">F</span>
-          <span class="c-desc">Modo tela cheia</span>
+          <span class="c-key">Botões na tela</span>
+          <span class="c-desc">Mover no celular</span>
         </div>
       </div>
     </section>
 
-    <!-- Dev -->
+    <!-- ─── 05 — Persona ──────────────────────────────────────────── -->
     <section class="section">
-      <p class="section-label">04 — Dev</p>
-      <h2>Sobre a Desenvolvedora</h2>
-      <p>
-        <!-- Bio aqui -->
-        Em breve.
+      <p class="section-label">05 — Para quem é</p>
+      <h2>A Persona: Lucas</h2>
+      <p>Último Pixel foi projetado para o Lucas — 20 anos, universitário, procrastinador assumido.</p>
+
+      <!-- Critério 4: conteúdo "sensível" com blur controlado por idade -->
+      <div class="sensitive-content" style="filter: blur(8px); transition: filter 0.4s;">
+        <div class="persona-card">
+          <div class="persona-header">
+            <div>
+              <div class="persona-name">Lucas, 20 anos</div>
+              <div class="persona-role">Universitário · Procrastinador · Gamer de intervalo</div>
+            </div>
+          </div>
+          <div class="persona-body">
+            <div class="persona-col">
+              <h3 class="persona-col-title">O que ele quer</h3>
+              <ul class="persona-list">
+                <li>Entrar rápido — botão JOGAR visível de imediato</li>
+                <li>Entender na hora, sem tutorial</li>
+                <li>Se frustrar com sorriso no rosto, não com raiva</li>
+                <li>Momentos screenshot-worthy</li>
+              </ul>
+            </div>
+            <div class="persona-col">
+              <h3 class="persona-col-title">O que o faz sair</h3>
+              <ul class="persona-list persona-list--bad">
+                <li>Loading longo</li>
+                <li>Controle ruim no celular</li>
+                <li>Muitas telas antes de jogar</li>
+                <li>Sabotagem injusta demais</li>
+              </ul>
+            </div>
+          </div>
+          <div class="persona-quote">
+            "Quero abrir, jogar e rir — sem tutorial de cinco minutos nem tela de loading eterna."
+          </div>
+        </div>
+      </div>
+
+      <!-- Label de status de acesso -->
+      <p style="margin-top:0.75rem;">
+        <span id="access-status" class="access-status"></span>
       </p>
+      <p style="font-family:var(--font-mono); font-size:0.6rem; color:var(--gray); margin-top:0.5rem; letter-spacing:0.05em;">
+        ↑ Este conteúdo é desbloqueado após verificação de idade na tela inicial.
+      </p>
+    </section>
+
+    <!-- ─── 06 — Criadora ─────────────────────────────────────────── -->
+    <section class="section">
+      <p class="section-label">06 — Criadora</p>
+      <h2>Quem Fez Isso?</h2>
+
+      <div class="creator-card">
+        <div class="creator-header">
+          <div class="creator-header-dots">
+            <span class="creator-header-dot dot-r"></span>
+            <span class="creator-header-dot dot-y"></span>
+            <span class="creator-header-dot dot-g"></span>
+          </div>
+          <span class="creator-header-label">player_info.txt</span>
+          <span style="width:60px;"></span>
+        </div>
+        <div class="creator-body">
+          <!-- Critério 1: nome injetado via JS -->
+          <div class="creator-name" data-game-developer></div>
+          <div class="creator-role">Técnica em Informática (UTFPR) · Graduanda em Engenharia de Software</div>
+          <p class="creator-bio">
+            Técnica em Informática pela UTFPR, atualmente cursando Engenharia de Software no
+            Centro Universitário Integrado. Último Pixel nasceu como primeiro projeto da
+            faculdade — um arcade feito do zero no Construct 3, com sprites desenhados pixel a pixel.
+          </p>
+          <p class="creator-bio" style="margin-top:0.75rem;">
+            Nas horas vagas: Tetris até zerar e playlists no repeat.
+            Espero que meu jogo te divirta por alguns minutos. 
+          </p>
+          <div class="creator-tags">
+            <span class="creator-tag">UTFPR</span>
+            <span class="creator-tag">Eng. de Software</span>
+            <span class="creator-tag">Construct 3</span>
+            <span class="creator-tag">Pixel Art</span>
+            <span class="creator-tag">Tetris</span>
+            <span class="creator-tag">Música</span>
+          </div>
+        </div>
+      </div>
     </section>
 
   </main>
