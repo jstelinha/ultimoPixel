@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,7 @@
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <nav class="navbar">
@@ -50,14 +52,9 @@
                 <p class="blink">Insert Coin</p>
                 <p class="sub">aguardando Construct 3</p>
               </div>
-              <iframe
-                class="game-frame js-game-frame"
-                src=""
+              <iframe class="game-frame js-game-frame" src=""
                 allow="autoplay; fullscreen; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; magnetometer; focus-without-user-activation"
-                allowfullscreen="true"
-                title="Último Pixel - Jogo"
-                style="display:none;"
-              ></iframe>
+                allowfullscreen="true" title="Último Pixel - Jogo" style="display:none;"></iframe>
             </div>
           </div>
         </div>
@@ -86,7 +83,8 @@
     <div class="mac-kbd-row mac-el" style="align-items: center;">
       <span class="hint"><kbd>↑ ↓ ← →</kbd> Mover</span>
       <span class="hint"><kbd>Space</kbd> Dash</span>
-      <button id="fullscreen-btn" style="background: var(--charcoal-light); color: var(--cream); font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid #555; border-radius: 4px; padding: 6px 10px; cursor: pointer; margin-left: auto; display: flex; align-items: center; gap: 6px; transition: background 0.15s;">
+      <button id="fullscreen-btn"
+        style="background: var(--charcoal-light); color: var(--cream); font-family: var(--font-mono); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid #555; border-radius: 4px; padding: 6px 10px; cursor: pointer; margin-left: auto; display: flex; align-items: center; gap: 6px; transition: background 0.15s;">
         <i class="ph ph-corners-out"></i> Tela Cheia
       </button>
     </div>
@@ -98,13 +96,7 @@
           Como devo te chamar, jogador?
         </label>
         <div class="greeting-row">
-          <input
-            id="greeting-input"
-            class="greeting-input"
-            type="text"
-            placeholder="Seu nome aqui..."
-            maxlength="30"
-          />
+          <input id="greeting-input" class="greeting-input" type="text" placeholder="Seu nome aqui..." maxlength="30" />
           <button id="greeting-btn" class="greeting-btn">Entrar →</button>
         </div>
         <p id="greeting-display" class="greeting-display"></p>
@@ -120,4 +112,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
