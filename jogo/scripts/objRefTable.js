@@ -19,11 +19,13 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.System.Acts.SetBoolVar,
 		C3.Plugins.System.Acts.SetVar,
+		C3.Plugins.System.Cnds.CompareVar,
+		C3.Plugins.Audio.Acts.SetMuted,
+		C3.Plugins.Sprite.Acts.SetAnimFrame,
+		C3.Plugins.System.Cnds.Else,
 		C3.Plugins.Mouse.Cnds.IsOverObject,
 		C3.Plugins.Mouse.Acts.SetCursor2,
-		C3.Plugins.System.Cnds.Else,
 		C3.Plugins.System.Cnds.OnLayoutStart,
-		C3.Plugins.Sprite.Acts.SetAnimFrame,
 		C3.Plugins.Sprite.Acts.SetAnimSpeed,
 		C3.Plugins.Sprite.Acts.SetSize,
 		C3.Behaviors.EightDir.Acts.SetSpeed,
@@ -45,7 +47,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Timer.Acts.StartTimer,
 		C3.Plugins.Sprite.Cnds.CompareX,
 		C3.Plugins.Sprite.Cnds.CompareY,
-		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.Keyboard.Cnds.OnKey,
 		C3.Plugins.Sprite.Acts.SetX,
 		C3.Plugins.Sprite.Exps.X,
@@ -53,6 +54,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Acts.SetY,
 		C3.Plugins.Sprite.Exps.Y,
 		C3.Plugins.Sprite.Acts.SetOpacity,
+		C3.Plugins.Text.Acts.SetOpacity,
 		C3.Behaviors.Timer.Cnds.OnTimer,
 		C3.Plugins.System.Cnds.EveryTick,
 		C3.Plugins.Sprite.Acts.MoveAtAngle,
@@ -98,10 +100,12 @@ self.C3_JsPropNameTable = [
 	{BotaoDash: 0},
 	{Toque: 0},
 	{InformaçãoDaPlataforma: 0},
-	{Sprite: 0},
 	{PlanoDeFundoEmBlocos: 0},
+	{BotaoMusica: 0},
+	{DashPronto: 0},
 	{TempoSobrevivencia: 0},
-	{JogoAtivo: 0}
+	{JogoAtivo: 0},
+	{EstaMutado: 0}
 ];
 
 self.InstanceType = {
@@ -131,6 +135,7 @@ self.InstanceType = {
 	BotaoDash: class extends self.ISpriteInstance {},
 	Toque: class extends self.IInstance {},
 	InformaçãoDaPlataforma: class extends self.IInstance {},
-	Sprite: class extends self.ISpriteInstance {},
-	PlanoDeFundoEmBlocos: class extends self.ITiledBackgroundInstance {}
+	PlanoDeFundoEmBlocos: class extends self.ITiledBackgroundInstance {},
+	BotaoMusica: class extends self.ISpriteInstance {},
+	DashPronto: class extends self.ITextInstance {}
 }

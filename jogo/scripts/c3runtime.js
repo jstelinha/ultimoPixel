@@ -1373,6 +1373,7 @@ function or(l, r)
 
 self.C3_ExpressionFuncs = [
 		() => 0,
+		() => "",
 		() => 1,
 		() => 90,
 		p => {
@@ -1396,7 +1397,6 @@ self.C3_ExpressionFuncs = [
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0((-60), 540);
 		},
-		() => "",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0(90, 270);
